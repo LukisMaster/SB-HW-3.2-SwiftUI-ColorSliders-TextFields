@@ -14,20 +14,20 @@ struct ChannelTextField: View {
    @Binding var textColor : String
    
    @State private var alertIsPresented = false
+    
+    
    
    var body: some View {
-       TextField("Red", text: $textColor)
+       TextField("", text: $textColor)
            .multilineTextAlignment(.trailing)
            .frame(width: 60, alignment: .center)
            .textFieldStyle(RoundedBorderTextFieldStyle())
-           .keyboardType(.numberPad)
            .onSubmit(validate)
            .alert("Неверный формат данных", isPresented: $alertIsPresented) {
 
            } message: {
                Text("Введите целое число от 0 до 255")
            }
-
    }
 }
 
